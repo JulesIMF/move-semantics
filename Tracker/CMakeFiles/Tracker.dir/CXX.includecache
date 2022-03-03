@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/julesimf/source/MIPT/Ded4/tracking/Tracker/Console.cpp
+cstdarg
+-
+Colors.h
+-
+Tracker.h
+-
+
+Tracker/includes/Tracker.h
+string
+-
+stack
+-
+vector
+-
+
+Tracker/internal/Colors.h
+

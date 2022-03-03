@@ -1,0 +1,6 @@
+/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles/rebuild_cache.dir
+/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles/edit_cache.dir
+/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles/track.dir
+/home/julesimf/source/MIPT/Ded4/tracking/build/Tracker/CMakeFiles/rebuild_cache.dir
+/home/julesimf/source/MIPT/Ded4/tracking/build/Tracker/CMakeFiles/edit_cache.dir
+/home/julesimf/source/MIPT/Ded4/tracking/build/Tracker/CMakeFiles/Tracker.dir

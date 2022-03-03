@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/julesimf/source/MIPT/Ded4/tracking/build",
+  "command": "/bin/clang++-12   -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/includes  -O2 -Wno-multichar -Wno-unused-result -Wno-narrowing  -g -g   -std=gnu++17 -o CMakeFiles/track.dir/main.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/main.cpp",
+  "file": "/home/julesimf/source/MIPT/Ded4/tracking/main.cpp"
+},
+{
+  "directory": "/home/julesimf/source/MIPT/Ded4/tracking/build/Tracker",
+  "command": "g++   -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/includes -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/internal  -O2  -g -g   -std=gnu++17 -o CMakeFiles/Tracker.dir/Tracker.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Tracker.cpp",
+  "file": "/home/julesimf/source/MIPT/Ded4/tracking/Tracker/Tracker.cpp"
+},
+{
+  "directory": "/home/julesimf/source/MIPT/Ded4/tracking/build/Tracker",
+  "command": "g++   -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/includes -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/internal  -O2  -g -g   -std=gnu++17 -o CMakeFiles/Tracker.dir/Colors.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Colors.cpp",
+  "file": "/home/julesimf/source/MIPT/Ded4/tracking/Tracker/Colors.cpp"
+},
+{
+  "directory": "/home/julesimf/source/MIPT/Ded4/tracking/build/Tracker",
+  "command": "g++   -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/includes -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/internal  -O2  -g -g   -std=gnu++17 -o CMakeFiles/Tracker.dir/Console.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Console.cpp",
+  "file": "/home/julesimf/source/MIPT/Ded4/tracking/Tracker/Console.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/bin/clang++-12  -O0 -Wno-multichar -Wno-unused-result -Wno-narrowing  -g -g   CMakeFiles/sortgraph.dir/main.cpp.o  -o sortgraph  Tracker/bin/libTracker.a 
