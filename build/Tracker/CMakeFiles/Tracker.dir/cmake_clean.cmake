@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Tracker.dir/Colors.cpp.o"
-  "CMakeFiles/Tracker.dir/Console.cpp.o"
-  "CMakeFiles/Tracker.dir/Tracker.cpp.o"
+  "CMakeFiles/Tracker.dir/core/Console.cpp.o"
+  "CMakeFiles/Tracker.dir/core/Dot.cpp.o"
+  "CMakeFiles/Tracker.dir/core/Html.cpp.o"
+  "CMakeFiles/Tracker.dir/core/Text.cpp.o"
+  "CMakeFiles/Tracker.dir/core/Tracker.cpp.o"
+  "CMakeFiles/Tracker.dir/misc/Colors.cpp.o"
   "bin/libTracker.a"
   "bin/libTracker.pdb"
 )

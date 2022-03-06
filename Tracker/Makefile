@@ -125,86 +125,167 @@ Tracker/fast:
 	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/build
 .PHONY : Tracker/fast
 
-Colors.o: Colors.cpp.o
+core/Console.o: core/Console.cpp.o
 
-.PHONY : Colors.o
-
-# target to build an object file
-Colors.cpp.o:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Colors.cpp.o
-.PHONY : Colors.cpp.o
-
-Colors.i: Colors.cpp.i
-
-.PHONY : Colors.i
-
-# target to preprocess a source file
-Colors.cpp.i:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Colors.cpp.i
-.PHONY : Colors.cpp.i
-
-Colors.s: Colors.cpp.s
-
-.PHONY : Colors.s
-
-# target to generate assembly for a file
-Colors.cpp.s:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Colors.cpp.s
-.PHONY : Colors.cpp.s
-
-Console.o: Console.cpp.o
-
-.PHONY : Console.o
+.PHONY : core/Console.o
 
 # target to build an object file
-Console.cpp.o:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Console.cpp.o
-.PHONY : Console.cpp.o
+core/Console.cpp.o:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.o
+.PHONY : core/Console.cpp.o
 
-Console.i: Console.cpp.i
+core/Console.i: core/Console.cpp.i
 
-.PHONY : Console.i
+.PHONY : core/Console.i
 
 # target to preprocess a source file
-Console.cpp.i:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Console.cpp.i
-.PHONY : Console.cpp.i
+core/Console.cpp.i:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.i
+.PHONY : core/Console.cpp.i
 
-Console.s: Console.cpp.s
+core/Console.s: core/Console.cpp.s
 
-.PHONY : Console.s
+.PHONY : core/Console.s
 
 # target to generate assembly for a file
-Console.cpp.s:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Console.cpp.s
-.PHONY : Console.cpp.s
+core/Console.cpp.s:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.s
+.PHONY : core/Console.cpp.s
 
-Tracker.o: Tracker.cpp.o
+core/Dot.o: core/Dot.cpp.o
 
-.PHONY : Tracker.o
+.PHONY : core/Dot.o
 
 # target to build an object file
-Tracker.cpp.o:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.o
-.PHONY : Tracker.cpp.o
+core/Dot.cpp.o:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o
+.PHONY : core/Dot.cpp.o
 
-Tracker.i: Tracker.cpp.i
+core/Dot.i: core/Dot.cpp.i
 
-.PHONY : Tracker.i
+.PHONY : core/Dot.i
 
 # target to preprocess a source file
-Tracker.cpp.i:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.i
-.PHONY : Tracker.cpp.i
+core/Dot.cpp.i:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.i
+.PHONY : core/Dot.cpp.i
 
-Tracker.s: Tracker.cpp.s
+core/Dot.s: core/Dot.cpp.s
 
-.PHONY : Tracker.s
+.PHONY : core/Dot.s
 
 # target to generate assembly for a file
-Tracker.cpp.s:
-	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.s
-.PHONY : Tracker.cpp.s
+core/Dot.cpp.s:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.s
+.PHONY : core/Dot.cpp.s
+
+core/Html.o: core/Html.cpp.o
+
+.PHONY : core/Html.o
+
+# target to build an object file
+core/Html.cpp.o:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.o
+.PHONY : core/Html.cpp.o
+
+core/Html.i: core/Html.cpp.i
+
+.PHONY : core/Html.i
+
+# target to preprocess a source file
+core/Html.cpp.i:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.i
+.PHONY : core/Html.cpp.i
+
+core/Html.s: core/Html.cpp.s
+
+.PHONY : core/Html.s
+
+# target to generate assembly for a file
+core/Html.cpp.s:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.s
+.PHONY : core/Html.cpp.s
+
+core/Text.o: core/Text.cpp.o
+
+.PHONY : core/Text.o
+
+# target to build an object file
+core/Text.cpp.o:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.o
+.PHONY : core/Text.cpp.o
+
+core/Text.i: core/Text.cpp.i
+
+.PHONY : core/Text.i
+
+# target to preprocess a source file
+core/Text.cpp.i:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.i
+.PHONY : core/Text.cpp.i
+
+core/Text.s: core/Text.cpp.s
+
+.PHONY : core/Text.s
+
+# target to generate assembly for a file
+core/Text.cpp.s:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.s
+.PHONY : core/Text.cpp.s
+
+core/Tracker.o: core/Tracker.cpp.o
+
+.PHONY : core/Tracker.o
+
+# target to build an object file
+core/Tracker.cpp.o:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.o
+.PHONY : core/Tracker.cpp.o
+
+core/Tracker.i: core/Tracker.cpp.i
+
+.PHONY : core/Tracker.i
+
+# target to preprocess a source file
+core/Tracker.cpp.i:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.i
+.PHONY : core/Tracker.cpp.i
+
+core/Tracker.s: core/Tracker.cpp.s
+
+.PHONY : core/Tracker.s
+
+# target to generate assembly for a file
+core/Tracker.cpp.s:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.s
+.PHONY : core/Tracker.cpp.s
+
+misc/Colors.o: misc/Colors.cpp.o
+
+.PHONY : misc/Colors.o
+
+# target to build an object file
+misc/Colors.cpp.o:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.o
+.PHONY : misc/Colors.cpp.o
+
+misc/Colors.i: misc/Colors.cpp.i
+
+.PHONY : misc/Colors.i
+
+# target to preprocess a source file
+misc/Colors.cpp.i:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.i
+.PHONY : misc/Colors.cpp.i
+
+misc/Colors.s: misc/Colors.cpp.s
+
+.PHONY : misc/Colors.s
+
+# target to generate assembly for a file
+misc/Colors.cpp.s:
+	cd /home/julesimf/source/MIPT/Ded4/tracking && $(MAKE) -f Tracker/CMakeFiles/Tracker.dir/build.make Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.s
+.PHONY : misc/Colors.cpp.s
 
 # Help Target
 help:
@@ -215,15 +296,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Tracker"
-	@echo "... Colors.o"
-	@echo "... Colors.i"
-	@echo "... Colors.s"
-	@echo "... Console.o"
-	@echo "... Console.i"
-	@echo "... Console.s"
-	@echo "... Tracker.o"
-	@echo "... Tracker.i"
-	@echo "... Tracker.s"
+	@echo "... core/Console.o"
+	@echo "... core/Console.i"
+	@echo "... core/Console.s"
+	@echo "... core/Dot.o"
+	@echo "... core/Dot.i"
+	@echo "... core/Dot.s"
+	@echo "... core/Html.o"
+	@echo "... core/Html.i"
+	@echo "... core/Html.s"
+	@echo "... core/Text.o"
+	@echo "... core/Text.i"
+	@echo "... core/Text.s"
+	@echo "... core/Tracker.o"
+	@echo "... core/Tracker.i"
+	@echo "... core/Tracker.s"
+	@echo "... misc/Colors.o"
+	@echo "... misc/Colors.i"
+	@echo "... misc/Colors.s"
 .PHONY : help
 
 

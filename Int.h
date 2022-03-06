@@ -42,37 +42,39 @@ public:
     Tracker::mainLogger.setName(info, name); \
     info.value = std::to_string(value); \
     info.address = this; \
-    Tracker::mainLogger.setHistory(Tracker::ModificationType::type, info, other); \
-    Tracker::mainLogger.enter##type(info);
+    Tracker::mainLogger.setHistory(Tracker::ModificationType::type, info, other);
 
     #define ENTER_ASG(type, other) \
     info.value = std::to_string(value); \
-    Tracker::mainLogger.setHistory(Tracker::ModificationType::type, info, other); \
-    Tracker::mainLogger.enter##type(info);
+    Tracker::mainLogger.setHistory(Tracker::ModificationType::type, info, other);
 
     // Constructors
     Int(int value = 0, std::string name = "") : 
         value(value)
     {
         ENTER_CTR(Ctr, nullptr)
+        Tracker::mainLogger.enterCtr(info);
     }
 
     Int(Int const& a, std::string name = "") : 
         value(a.value)
     {
         ENTER_CTR(CtrCopy, &a.info)
+        Tracker::mainLogger.enterCtrCopy(info, a.info);
     }
 
     Int(Int&& a, std::string name = "") :
         value(a.value)
     {
         ENTER_CTR(CtrMove, &a.info)
+        Tracker::mainLogger.enterCtrMove(info, a.info);
     }
 
     Int& operator=(int a)
     {
         value = a;
         ENTER_ASG(Asg, nullptr)
+        Tracker::mainLogger.enterAsg(info);
         return *this;
     }
 
@@ -80,6 +82,7 @@ public:
     {
         value = a.value;
         ENTER_ASG(AsgCopy, &a.info)
+        Tracker::mainLogger.enterAsgCopy(info, a.info);
         return *this;
     }
 
@@ -87,6 +90,7 @@ public:
     {
         value = a.value;
         ENTER_ASG(AsgMove, &a.info)
+        Tracker::mainLogger.enterAsgMove(info, a.info);
         return *this;
     }
 
@@ -102,7 +106,7 @@ public:
         value name##= b.value; \
         info.value = std::to_string(value); \
         Tracker::mainLogger.setHistory(Tracker::ModificationType::AsgOper, info, &b.info, #name); \
-        Tracker::mainLogger.enterAsgOper(info, #name); \
+        Tracker::mainLogger.enterAsgOper(info, b.info, #name); \
         return *this; \
     } \
     const Int operator name(Int const& b) const \

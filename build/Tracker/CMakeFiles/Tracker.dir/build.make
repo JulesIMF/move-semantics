@@ -57,60 +57,105 @@ include Tracker/CMakeFiles/Tracker.dir/progress.make
 # Include the compile flags for this target's objects.
 include Tracker/CMakeFiles/Tracker.dir/flags.make
 
-Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
-Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.o: ../Tracker/Tracker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.o"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/Tracker.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Tracker.cpp
+Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
+Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.o: ../Tracker/core/Tracker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.o"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/core/Tracker.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Tracker.cpp
 
-Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/Tracker.cpp.i"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Tracker.cpp > CMakeFiles/Tracker.dir/Tracker.cpp.i
+Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/core/Tracker.cpp.i"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Tracker.cpp > CMakeFiles/Tracker.dir/core/Tracker.cpp.i
 
-Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/Tracker.cpp.s"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Tracker.cpp -o CMakeFiles/Tracker.dir/Tracker.cpp.s
+Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/core/Tracker.cpp.s"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Tracker.cpp -o CMakeFiles/Tracker.dir/core/Tracker.cpp.s
 
-Tracker/CMakeFiles/Tracker.dir/Colors.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
-Tracker/CMakeFiles/Tracker.dir/Colors.cpp.o: ../Tracker/Colors.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Tracker/CMakeFiles/Tracker.dir/Colors.cpp.o"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/Colors.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Colors.cpp
+Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
+Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.o: ../Tracker/core/Text.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.o"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/core/Text.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Text.cpp
 
-Tracker/CMakeFiles/Tracker.dir/Colors.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/Colors.cpp.i"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Colors.cpp > CMakeFiles/Tracker.dir/Colors.cpp.i
+Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/core/Text.cpp.i"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Text.cpp > CMakeFiles/Tracker.dir/core/Text.cpp.i
 
-Tracker/CMakeFiles/Tracker.dir/Colors.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/Colors.cpp.s"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Colors.cpp -o CMakeFiles/Tracker.dir/Colors.cpp.s
+Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/core/Text.cpp.s"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Text.cpp -o CMakeFiles/Tracker.dir/core/Text.cpp.s
 
-Tracker/CMakeFiles/Tracker.dir/Console.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
-Tracker/CMakeFiles/Tracker.dir/Console.cpp.o: ../Tracker/Console.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Tracker/CMakeFiles/Tracker.dir/Console.cpp.o"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/Console.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Console.cpp
+Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
+Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.o: ../Tracker/core/Console.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.o"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/core/Console.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Console.cpp
 
-Tracker/CMakeFiles/Tracker.dir/Console.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/Console.cpp.i"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Console.cpp > CMakeFiles/Tracker.dir/Console.cpp.i
+Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/core/Console.cpp.i"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Console.cpp > CMakeFiles/Tracker.dir/core/Console.cpp.i
 
-Tracker/CMakeFiles/Tracker.dir/Console.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/Console.cpp.s"
-	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/Console.cpp -o CMakeFiles/Tracker.dir/Console.cpp.s
+Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/core/Console.cpp.s"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Console.cpp -o CMakeFiles/Tracker.dir/core/Console.cpp.s
+
+Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
+Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.o: ../Tracker/core/Html.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.o"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/core/Html.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Html.cpp
+
+Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/core/Html.cpp.i"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Html.cpp > CMakeFiles/Tracker.dir/core/Html.cpp.i
+
+Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/core/Html.cpp.s"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Html.cpp -o CMakeFiles/Tracker.dir/core/Html.cpp.s
+
+Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
+Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o: ../Tracker/core/Dot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/core/Dot.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Dot.cpp
+
+Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/core/Dot.cpp.i"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Dot.cpp > CMakeFiles/Tracker.dir/core/Dot.cpp.i
+
+Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/core/Dot.cpp.s"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Dot.cpp -o CMakeFiles/Tracker.dir/core/Dot.cpp.s
+
+Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.o: Tracker/CMakeFiles/Tracker.dir/flags.make
+Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.o: ../Tracker/misc/Colors.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.o"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tracker.dir/misc/Colors.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/Tracker/misc/Colors.cpp
+
+Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tracker.dir/misc/Colors.cpp.i"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesimf/source/MIPT/Ded4/tracking/Tracker/misc/Colors.cpp > CMakeFiles/Tracker.dir/misc/Colors.cpp.i
+
+Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tracker.dir/misc/Colors.cpp.s"
+	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesimf/source/MIPT/Ded4/tracking/Tracker/misc/Colors.cpp -o CMakeFiles/Tracker.dir/misc/Colors.cpp.s
 
 # Object files for target Tracker
 Tracker_OBJECTS = \
-"CMakeFiles/Tracker.dir/Tracker.cpp.o" \
-"CMakeFiles/Tracker.dir/Colors.cpp.o" \
-"CMakeFiles/Tracker.dir/Console.cpp.o"
+"CMakeFiles/Tracker.dir/core/Tracker.cpp.o" \
+"CMakeFiles/Tracker.dir/core/Text.cpp.o" \
+"CMakeFiles/Tracker.dir/core/Console.cpp.o" \
+"CMakeFiles/Tracker.dir/core/Html.cpp.o" \
+"CMakeFiles/Tracker.dir/core/Dot.cpp.o" \
+"CMakeFiles/Tracker.dir/misc/Colors.cpp.o"
 
 # External object files for target Tracker
 Tracker_EXTERNAL_OBJECTS =
 
-Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/Tracker.cpp.o
-Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/Colors.cpp.o
-Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/Console.cpp.o
+Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/core/Tracker.cpp.o
+Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/core/Text.cpp.o
+Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.o
+Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.o
+Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o
+Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/misc/Colors.cpp.o
 Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/build.make
 Tracker/bin/libTracker.a: Tracker/CMakeFiles/Tracker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library bin/libTracker.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julesimf/source/MIPT/Ded4/tracking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library bin/libTracker.a"
 	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && $(CMAKE_COMMAND) -P CMakeFiles/Tracker.dir/cmake_clean_target.cmake
 	cd /home/julesimf/source/MIPT/Ded4/tracking/build/Tracker && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tracker.dir/link.txt --verbose=$(VERBOSE)
 

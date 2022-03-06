@@ -31,19 +31,20 @@ Revision History:
 //
 
 
-Int getLol()
+Int test(Int a, Int b, Int c)
 {
-    return 45;
+    TRACKER_ENTER;
+    return a + b + c;
 }
 
 int main()
 {
     Tracker::mainLogger.addNewLogger(new Tracker::ConsoleLogger);
+    Tracker::mainLogger.addNewLogger(new Tracker::HtmlLogger);
+    Tracker::mainLogger.addNewLogger(new Tracker::DotLogger);
     TRACKER_ENTER;
-    TRACKER_CREATE(Int, lol, 54);
-    TRACKER_CREATE(Int, lol2, 0);
-    lol2 = std::move(lol + lol);
-
-    lol2 = getLol();
+    TRACKER_CREATE(Int, lol, 0);
+    TRACKER_CREATE(Int, lol2, 2);
+    lol = lol2;
     return 0;
 }

@@ -1,2 +1,2 @@
-/usr/bin/ar qc bin/libTracker.a  CMakeFiles/Tracker.dir/Tracker.cpp.o CMakeFiles/Tracker.dir/Colors.cpp.o CMakeFiles/Tracker.dir/Console.cpp.o
+/usr/bin/ar qc bin/libTracker.a  CMakeFiles/Tracker.dir/core/Tracker.cpp.o CMakeFiles/Tracker.dir/core/Text.cpp.o CMakeFiles/Tracker.dir/core/Console.cpp.o CMakeFiles/Tracker.dir/core/Html.cpp.o CMakeFiles/Tracker.dir/core/Dot.cpp.o CMakeFiles/Tracker.dir/misc/Colors.cpp.o
 /usr/bin/ranlib bin/libTracker.a

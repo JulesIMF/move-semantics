@@ -49,9 +49,12 @@ include_directories(includes
                     internal)
 
 add_library(Tracker STATIC
-    Tracker.cpp
-    Colors.cpp
-    Console.cpp
+    core/Tracker.cpp
+    core/Text.cpp
+    core/Console.cpp
+    core/Html.cpp
+    core/Dot.cpp
+    misc/Colors.cpp
 )
 
 target_link_libraries(Tracker)
