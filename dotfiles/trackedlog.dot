@@ -1,0 +1,55 @@
+digraph
+{
+dpi = 400;
+subgraph cluster_0 {
+label="int main()"
+style=filled; color="#ebebeb"
+
+// -----------------------------------------------------------------------------
+node_id_0_index_0[shape=none, label=<<TABLE BORDER="2">
+<TR>
+<TD COLSPAN = "3"><FONT COLOR="#d1d110">"lol"</FONT></TD>
+</TR>
+<TR>
+<TD>id: <FONT COLOR="#d670d6">"0"</FONT></TD>
+<TD>val: <FONT COLOR="#d670d6">"0"</FONT></TD>
+<TD>addr: <FONT COLOR="#d670d6">"aabb5f50"</FONT></TD>
+</TR>
+</TABLE>
+>];
+
+
+// -----------------------------------------------------------------------------
+node_id_1_index_0[shape=none, label=<<TABLE BORDER="2">
+<TR>
+<TD COLSPAN = "3"><FONT COLOR="#d1d110">"lol2"</FONT></TD>
+</TR>
+<TR>
+<TD>id: <FONT COLOR="#d670d6">"1"</FONT></TD>
+<TD>val: <FONT COLOR="#d670d6">"2"</FONT></TD>
+<TD>addr: <FONT COLOR="#d670d6">"aabb5ff0"</FONT></TD>
+</TR>
+</TABLE>
+>];
+
+
+// -----------------------------------------------------------------------------
+asg_id_0_operindex_1[shape=rectangle, style=filled, label="COPY=", fillcolor="mediumspringgreen"]
+
+// -----------------------------------------------------------------------------
+node_id_1_index_1[label = "DTR \"lol2\"", shape = "diamond", style = "filled, bold", fillcolor = "#3b8eea", fontsize = 15]
+
+// -----------------------------------------------------------------------------
+node_id_0_index_1[label = "DTR \"lol\"", shape = "diamond", style = "filled, bold", fillcolor = "#3b8eea", fontsize = 15]
+
+// -----------------------------------------------------------------------------
+}
+node_id_0_index_0 -> node_id_1_index_0[weight=100, style=dashed, color="#d670d6"];
+node_id_1_index_0 -> asg_id_0_operindex_1[weight=100, style=dashed, color="#d670d6"];
+node_id_1_index_0 -> asg_id_0_operindex_1[color=black];
+asg_id_0_operindex_1 -> node_id_0_index_0[color=black];
+asg_id_0_operindex_1 -> node_id_1_index_1[weight=100, style=dashed, color="#d670d6"];
+node_id_1_index_0 -> node_id_1_index_1[style=dashed, color="#3b8eea"];
+node_id_1_index_1 -> node_id_0_index_1[weight=100, style=dashed, color="#d670d6"];
+node_id_0_index_0 -> node_id_0_index_1[style=dashed, color="#3b8eea"];
+}
