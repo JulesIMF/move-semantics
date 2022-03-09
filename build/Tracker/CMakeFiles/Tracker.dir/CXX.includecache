@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+../Tracker/includes/Tracker.h
+string
+-
+stack
+-
+vector
+-
+map
+-
+set
+-
+
+../Tracker/internal/Colors.h
+
 /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Console.cpp
 Colors.h
 -
@@ -44,17 +58,5 @@ Tracker.h
 Tracker.h
 -
 
-Tracker/includes/Tracker.h
-string
--
-stack
--
-vector
--
-map
--
-set
--
-
-Tracker/internal/Colors.h
+/home/julesimf/source/MIPT/Ded4/tracking/Tracker/misc/Colors.cpp
 

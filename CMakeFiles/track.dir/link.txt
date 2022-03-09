@@ -1,1 +1,1 @@
-/usr/bin/c++  -O2 -Wno-multichar -Wno-unused-result -Wno-narrowing  -g   CMakeFiles/track.dir/main.cpp.o  -o track  Tracker/bin/libTracker.a 
+/usr/bin/c++  -O2 -Wno-multichar -Wno-unused-result -Wno-narrowing  -fno-inline-small-functions -fno-elide-constructors -g   CMakeFiles/track.dir/main.cpp.o  -o track  Tracker/bin/libTracker.a 

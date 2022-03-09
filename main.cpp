@@ -22,7 +22,7 @@ Revision History:
 //
 // Includes / usings
 //
-
+// #define INT_NO_MOVE
 #include <Tracker.h>
 #include "Int.h"
 
@@ -30,21 +30,32 @@ Revision History:
 // Defines
 //
 
-
-Int test(Int a, Int b, Int c)
+Int level1()
 {
     TRACKER_ENTER;
-    return a + b + c;
+    TRACKER_CREATE(Int, valueInLevel1, 0);
+    return valueInLevel1;
+}
+
+Int level2()
+{
+    TRACKER_ENTER;
+    TRACKER_CREATE(Int, valueInLevel2, level1());
+    return valueInLevel2;
+}
+
+Int level3()
+{
+    TRACKER_ENTER;
+    TRACKER_CREATE(Int, valueInLevel3, level2());
+    return valueInLevel3;
 }
 
 int main()
 {
-    Tracker::mainLogger.addNewLogger(new Tracker::ConsoleLogger);
-    Tracker::mainLogger.addNewLogger(new Tracker::HtmlLogger);
-    Tracker::mainLogger.addNewLogger(new Tracker::DotLogger);
+    TRACKER_DEFAULT_INITIALIZATION;
     TRACKER_ENTER;
-    TRACKER_CREATE(Int, lol, 0);
-    TRACKER_CREATE(Int, lol2, 2);
-    lol = lol2;
-    return 0;
+    TRACKER_CREATE(Int, returnValueLevel1, level1());
+    TRACKER_CREATE(Int, returnValueLevel2, level2());
+    TRACKER_CREATE(Int, returnValueLevel3, level3());
 }

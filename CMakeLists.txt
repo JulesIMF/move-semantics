@@ -34,6 +34,7 @@ set(WARNING_FLAGS "-Wno-multichar -Wno-unused-result -Wno-narrowing")
 
 set(OPT "-O2")
 set(SANITIZE 0)
+set(ELIDE 0)
 
 if(SANITIZE)
     set(ASAN "-fsanitize=address")
@@ -41,7 +42,13 @@ else()
     set(ASAN "")
 endif()
 
-set(CMAKE_CXX_FLAGS "${OPT} ${WARNING_FLAGS} ${ASAN} -g")
+if(ELIDE)
+    set(NOELIDE "-fno-inline-small-functions ")
+else()
+    set(NOELIDE "-fno-inline-small-functions -fno-elide-constructors")
+endif()
+
+set(CMAKE_CXX_FLAGS "${OPT} ${WARNING_FLAGS} ${ASAN} ${NOELIDE} -g")
 	
 #
 # Building

@@ -7,6 +7,7 @@ Tracker/CMakeFiles/Tracker.dir/core/Console.cpp.o: Tracker/internal/Colors.h
 
 Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o: Tracker/core/Dot.cpp
 Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o: Tracker/includes/Tracker.h
+Tracker/CMakeFiles/Tracker.dir/core/Dot.cpp.o: Tracker/internal/Colors.h
 
 Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.o: Tracker/core/Html.cpp
 Tracker/CMakeFiles/Tracker.dir/core/Html.cpp.o: Tracker/includes/Tracker.h

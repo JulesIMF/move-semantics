@@ -27,6 +27,7 @@ Revision History:
 #include <cassert>
 #include <cstdarg>
 #include <stdexcept>
+#include <Colors.h>
 
 //
 // Defines
@@ -72,7 +73,7 @@ namespace Tracker
     void DotLogger::enterCtr(TrackedInfo const& info)
     {
         auto node = allocNode(info.id);
-        logInfo(info, currentNode(info.id)); // log last version
+        logInfo(info, currentNode(info.id), "CTR");
         linkExec(node);
         assert(!node.index);
     }
@@ -80,7 +81,7 @@ namespace Tracker
     void DotLogger::enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
         auto node = allocNode(infoTo.id);
-        logInfo(infoTo, currentNode(infoTo.id)); // log last version
+        logInfo(infoTo, currentNode(infoTo.id), "COPY", "f14c4c");
         linkExec(node);
         assert(!node.index);
         link(currentNode(infoFrom.id), node, LinkType::Copy);
@@ -89,33 +90,41 @@ namespace Tracker
     void DotLogger::enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
         auto node = allocNode(infoTo.id);
-        logInfo(infoTo, currentNode(infoTo.id)); // log last version
+        logInfo(infoTo, currentNode(infoTo.id), "MOVE", "23d18b");
         linkExec(node);
         assert(!node.index);
-        link(currentNode(infoFrom.id), node, LinkType::Copy);
+        link(currentNode(infoFrom.id), node, LinkType::Move);
     }
 
     void DotLogger::enterAsg(TrackedInfo const& info)
     {
-
+        auto node = allocNode(info.id);
+        logInfo(info, currentNode(info.id), "Literal assign");
+        linkExec(node);
     }
 
     void DotLogger::enterAsgCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
-        enterAsgOper(infoTo, infoFrom, "COPY");
+        auto node = allocNode(infoTo.id);
+        logInfo(infoTo, currentNode(infoTo.id), "COPY assign", "f14c4c");
+        linkExec(node);
+        link(currentNode(infoFrom.id), node, LinkType::Copy);
     }
 
     void DotLogger::enterAsgMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
-        enterAsgOper(infoTo, infoFrom, "MOVE");
+        auto node = allocNode(infoTo.id);
+        logInfo(infoTo, currentNode(infoTo.id), "MOVE assign", "23d18b");
+        linkExec(node);
+        link(currentNode(infoFrom.id), node, LinkType::Move);
     }
 
     void DotLogger::enterAsgOper(TrackedInfo const& infoTo, TrackedInfo const& infoFrom, std::string const& oper)
     {
-        auto nodeAsg = getAsgNode(infoTo.id, oper);
-        linkExec(nodeAsg);
-        link(currentNode(infoFrom.id), nodeAsg, LinkType::Asg);
-        link(nodeAsg, currentNode(infoTo.id), LinkType::Asg);
+        auto node = allocNode(infoTo.id);
+        logInfo(infoTo, currentNode(infoTo.id), oper + "=");
+        linkExec(node);
+        link(currentNode(infoFrom.id), node, LinkType::Asg);
     }
 
     DotLogger::Node DotLogger::allocNode(int id)
@@ -143,27 +152,28 @@ namespace Tracker
         return { id, index };
     }
 
-    void DotLogger::logInfo(TrackedInfo const& info, Node node)
+    void DotLogger::logInfo(TrackedInfo const& info, Node node, std::string const& reason, char const* color)
     {
         printNodeName(nodes, node);
         write(nodes,  "[shape=none, label=<"
                         "<TABLE BORDER=\"2\">\n"
                         "<TR>\n"
-                        "<TD COLSPAN = \"3\"><FONT COLOR=\"#d1d110\">\"%s\"</FONT></TD>\n"
+                        "<TD COLSPAN = \"3\"><b><FONT COLOR=\"#707009\">\"%s\"</FONT></b></TD>\n"
                         "</TR>\n"
-                        // "<TR>\n"
-                        // "<TD COLSPAN = \"3\"><FONT COLOR=\"#d670d6\">\"\"%s\"\"</FONT></TD>\n"
-                        // "</TR>\n"
                         "<TR>\n"
-                        "<TD>id: <FONT COLOR=\"#d670d6\">\"%d\"</FONT></TD>\n"
-                        "<TD>val: <FONT COLOR=\"#d670d6\">\"%s\"</FONT></TD>\n"
-                        "<TD>addr: <FONT COLOR=\"#d670d6\">\"%x\"</FONT></TD>\n"
+                        "<TD COLSPAN = \"3\">Reason: <b><FONT COLOR=\"#%s\">%s</FONT></b></TD>\n"
+                        "</TR>\n"
+                        "<TR>\n"
+                        "<TD>id: <b><FONT COLOR=\"#d670d6\">\"%d\"</FONT></b></TD>\n"
+                        "<TD>val: <b><FONT COLOR=\"#d670d6\">\"%s\"</FONT></b></TD>\n"
+                        "<TD>addr: <b><FONT COLOR=\"#d670d6\">\"%x\"</FONT></b></TD>\n"
                         "</TR>\n"
                         "</TABLE>\n"
                         ">];\n\n",
                         
                         info.name.c_str(),
-                        // info.function.c_str(),
+                        color,
+                        reason.c_str(),
                         info.id,
                         info.value.c_str(),
                         info.address);
@@ -262,8 +272,10 @@ namespace Tracker
         snprintf(request, sizeof(request) - 1, "cat %s %s > %s", nodesFilename, linksFilename, finalFilename);
         system(request);
 
-        snprintf(request, sizeof(request) - 1, "dot -Tpng %s -o %s > dotfiles/dotlog.txt", finalFilename, imageFilename);
+        message("rendering graph log...\n");
+        snprintf(request, sizeof(request) - 1, "dot -Tpng %s -o %s 2> dotfiles/dotlog.txt", finalFilename, imageFilename);
         system(request);
+        message("graph log saved to %s\n", imageFilename);
     }
 
     void DotLogger::endPrintNode()
@@ -315,5 +327,14 @@ namespace Tracker
 
         entriesFlow.clear();
         entryContentByName.clear();
+    }
+
+    void DotLogger::message(char const* fmt, ...)
+    {
+        fprintf(stderr, "%sDotLogger: %s", TerminalColor::PurpleB, TerminalColor::Default);
+        va_list va;
+        va_start(va, fmt);
+        vfprintf(stderr, fmt, va);
+        va_end(va);
     }
 }

@@ -61,7 +61,7 @@ namespace Tracker
         if (name == "")
         {
             info.name = "tmp";
-            info.name += std::to_string(info.id);
+            info.name += std::to_string(++tmpCounter);
             info.isTemp = true;
         }
 

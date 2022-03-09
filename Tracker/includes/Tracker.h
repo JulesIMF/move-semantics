@@ -100,6 +100,7 @@ namespace Tracker
 
     protected:
         int currentId = 0;
+        int tmpCounter = 0;
         struct
         {
             int obj = 0;
@@ -230,7 +231,7 @@ namespace Tracker
         Node allocNode(int id);
         Node getAsgNode(int id, std::string const& oper);
         Node currentNode(int id);
-        void logInfo(TrackedInfo const& info, Node node);
+        void logInfo(TrackedInfo const& info, Node node, std::string const& reason, char const* color = "000000");
         void link(Node from, Node to, LinkType type);
         void linkExec(Node to);
         void setLast(Node last);
@@ -240,6 +241,7 @@ namespace Tracker
         void setEntryContent(std::string const& entryName, char const* fmt, ...);
         void write(FILE* file, char const* fmt, ...);
         void flushEntries();
+        void message(char const* fmt, ...);
     };
 
     extern MainLogger mainLogger;
@@ -258,6 +260,9 @@ namespace Tracker
     };
 }
 
+#define TRACKER_DEFAULT_INITIALIZATION  Tracker::mainLogger.addNewLogger(new Tracker::ConsoleLogger); \
+                                        Tracker::mainLogger.addNewLogger(new Tracker::HtmlLogger); \
+                                        Tracker::mainLogger.addNewLogger(new Tracker::DotLogger)
 #define TRACKER_ENTER Tracker::FncEnvoy __envoy(__PRETTY_FUNCTION__)
 #define TRACKER_CREATE(type, name, init) type name(init, #name)
 

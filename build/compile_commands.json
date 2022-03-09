@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/julesimf/source/MIPT/Ded4/tracking/build",
-  "command": "/bin/clang++-12   -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/includes  -O2 -Wno-multichar -Wno-unused-result -Wno-narrowing  -g -g   -std=gnu++17 -o CMakeFiles/track.dir/main.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/main.cpp",
+  "command": "/bin/clang++-12   -I/home/julesimf/source/MIPT/Ded4/tracking/Tracker/includes  -O2 -Wno-multichar -Wno-unused-result -Wno-narrowing  -fno-inline-small-functions -fno-elide-constructors -g -g   -std=gnu++17 -o CMakeFiles/track.dir/main.cpp.o -c /home/julesimf/source/MIPT/Ded4/tracking/main.cpp",
   "file": "/home/julesimf/source/MIPT/Ded4/tracking/main.cpp"
 },
 {

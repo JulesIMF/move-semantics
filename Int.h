@@ -62,13 +62,14 @@ public:
         ENTER_CTR(CtrCopy, &a.info)
         Tracker::mainLogger.enterCtrCopy(info, a.info);
     }
-
+#ifndef INT_NO_MOVE
     Int(Int&& a, std::string name = "") :
         value(a.value)
     {
         ENTER_CTR(CtrMove, &a.info)
         Tracker::mainLogger.enterCtrMove(info, a.info);
     }
+#endif
 
     Int& operator=(int a)
     {
@@ -85,7 +86,7 @@ public:
         Tracker::mainLogger.enterAsgCopy(info, a.info);
         return *this;
     }
-
+#ifndef INT_NO_MOVE
     Int& operator=(Int&& a)
     {
         value = a.value;
@@ -93,6 +94,7 @@ public:
         Tracker::mainLogger.enterAsgMove(info, a.info);
         return *this;
     }
+#endif
 
     ~Int()
     {
@@ -127,41 +129,47 @@ public:
     OPER(<<);
 
 
-    // const Int operator+() const
-    // {
-    //     return Int(*this);
-    // }
+    const Int operator+() const
+    {
+        TRACKER_ENTER;
+        return Int(*this);
+    }
 
-    // const Int operator-() const
-    // {
-    //     return Int(*this) * Int(-1);
-    // }
+    const Int operator-() const
+    {
+        TRACKER_ENTER;
+        return Int(*this) * Int(-1);
+    }
 
-    // Int& operator++()
-    // {
-    //     value++;
-    //     return *this;
-    // }
+    Int& operator++()
+    {
+        TRACKER_ENTER;
+        value++;
+        return *this;
+    }
 
-    // Int operator++(int)
-    // {
-    //     Int copy = *this;
-    //     ++(*this);
-    //     return copy;
-    // }
+    Int operator++(int)
+    {
+        TRACKER_ENTER;
+        TRACKER_CREATE(Int, currentValueCopy, *this);
+        ++(*this);
+        return currentValueCopy;
+    }
 
-    // Int& operator--()
-    // {
-    //     value--;
-    //     return *this;
-    // }
+    Int& operator--()
+    {
+        TRACKER_ENTER;
+        value--;
+        return *this;
+    }
 
-    // Int operator--(int)
-    // {
-    //     Int copy = *this;
-    //     --(*this);
-    //     return copy;
-    // }
+    Int operator--(int)
+    {
+        TRACKER_ENTER;
+        TRACKER_CREATE(Int, currentValueCopy, *this);
+        --(*this);
+        return currentValueCopy;
+    }
 
     // Cast 
     operator int() const 

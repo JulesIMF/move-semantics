@@ -41,7 +41,7 @@ namespace Tracker
         if (file == nullptr)
             throw std::runtime_error(std::string("cant open \"") + filename + "\"");
         
-        fprintf(file, "<pre><span class=\"inner-pre\" style=\"font-size: %dpx\">\n", fontSize);
+        fprintf(file, "<pre style = \"background-color: #1e1e1e; color: #FFFFFF\"><span class=\"inner-pre\" style=\"font-size: %dpx\">\n", fontSize);
         printColor(Color::RedB, "Tracker log ");
         auto currentTime = time(NULL);
         printColor(Color::Default, "generated on " + std::string(std::ctime(&currentTime)) + "\n\n");
