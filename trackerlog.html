@@ -1,59 +1,20 @@
 <pre style = "background-color: #1e1e1e; color: #FFFFFF"><span class="inner-pre" style="font-size: 14px">
-<b><font color=#f14c4c>Tracker log </font></b>generated on Wed Mar  9 03:24:53 2022
+<b><font color=#f14c4c>Tracker log </font></b>generated on Wed Apr 13 01:34:10 2022
 
 
 int main()
 {
-    Int level1()
+    <b><font color=#e5e5e5>CTOR </font></b><b><font color=#f5f543>"origin" </font></b>(id: <b><font color=#d670d6>0</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>8ea67210</font></b>)
+    T construct_from(T&&) [with T = Int&]
     {
-        <b><font color=#e5e5e5>CTR </font></b><b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>0</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>)
-        <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"tmp1" </font></b>(id: <b><font color=#d670d6>1</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>) from <b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>0</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>)
-        <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>0</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>)
     }
-    <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"returnValueLevel1" </font></b>(id: <b><font color=#d670d6>2</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa57b0</font></b>) from <b><font color=#f5f543>"tmp1" </font></b>(id: <b><font color=#d670d6>1</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>)
-    <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"tmp1" </font></b>(id: <b><font color=#d670d6>1</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>)
-    Int level2()
+    <b><font color=#f14c4c>COPY </font></b><b><font color=#f5f543>"tmp1" </font></b>(id: <b><font color=#d670d6>1</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>8ea672b0</font></b>) from <b><font color=#f5f543>"origin" </font></b>(id: <b><font color=#d670d6>0</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>8ea67210</font></b>)
+    T construct_from(T&&) [with T = Int]
     {
-        Int level1()
-        {
-            <b><font color=#e5e5e5>CTR </font></b><b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>3</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5490</font></b>)
-            <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"tmp2" </font></b>(id: <b><font color=#d670d6>4</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>) from <b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>3</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5490</font></b>)
-            <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>3</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5490</font></b>)
-        }
-        <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"valueInLevel2" </font></b>(id: <b><font color=#d670d6>5</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5600</font></b>) from <b><font color=#f5f543>"tmp2" </font></b>(id: <b><font color=#d670d6>4</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>)
-        <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"tmp2" </font></b>(id: <b><font color=#d670d6>4</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>)
-        <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"tmp3" </font></b>(id: <b><font color=#d670d6>6</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>) from <b><font color=#f5f543>"valueInLevel2" </font></b>(id: <b><font color=#d670d6>5</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5600</font></b>)
-        <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"valueInLevel2" </font></b>(id: <b><font color=#d670d6>5</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5600</font></b>)
+        <b><font color=#f14c4c>COPY </font></b><b><font color=#f5f543>"tmp2" </font></b>(id: <b><font color=#d670d6>2</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>8ea67350</font></b>) from <b><font color=#f5f543>"origin" </font></b>(id: <b><font color=#d670d6>0</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>8ea67210</font></b>)
     }
-    <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"returnValueLevel2" </font></b>(id: <b><font color=#d670d6>7</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5850</font></b>) from <b><font color=#f5f543>"tmp3" </font></b>(id: <b><font color=#d670d6>6</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>)
-    <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"tmp3" </font></b>(id: <b><font color=#d670d6>6</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>)
-    Int level3()
-    {
-        Int level2()
-        {
-            Int level1()
-            {
-                <b><font color=#e5e5e5>CTR </font></b><b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>8</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5280</font></b>)
-                <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"tmp4" </font></b>(id: <b><font color=#d670d6>9</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5490</font></b>) from <b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>8</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5280</font></b>)
-                <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"valueInLevel1" </font></b>(id: <b><font color=#d670d6>8</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5280</font></b>)
-            }
-            <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"valueInLevel2" </font></b>(id: <b><font color=#d670d6>10</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa53f0</font></b>) from <b><font color=#f5f543>"tmp4" </font></b>(id: <b><font color=#d670d6>9</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5490</font></b>)
-            <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"tmp4" </font></b>(id: <b><font color=#d670d6>9</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5490</font></b>)
-            <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"tmp5" </font></b>(id: <b><font color=#d670d6>11</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>) from <b><font color=#f5f543>"valueInLevel2" </font></b>(id: <b><font color=#d670d6>10</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa53f0</font></b>)
-            <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"valueInLevel2" </font></b>(id: <b><font color=#d670d6>10</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa53f0</font></b>)
-        }
-        <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"valueInLevel3" </font></b>(id: <b><font color=#d670d6>12</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5600</font></b>) from <b><font color=#f5f543>"tmp5" </font></b>(id: <b><font color=#d670d6>11</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>)
-        <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"tmp5" </font></b>(id: <b><font color=#d670d6>11</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa56a0</font></b>)
-        <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"tmp6" </font></b>(id: <b><font color=#d670d6>13</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>) from <b><font color=#f5f543>"valueInLevel3" </font></b>(id: <b><font color=#d670d6>12</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5600</font></b>)
-        <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"valueInLevel3" </font></b>(id: <b><font color=#d670d6>12</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5600</font></b>)
-    }
-    <b><font color=#23d18b>MOVE </font></b><b><font color=#f5f543>"returnValueLevel3" </font></b>(id: <b><font color=#d670d6>14</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa58f0</font></b>) from <b><font color=#f5f543>"tmp6" </font></b>(id: <b><font color=#d670d6>13</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>)
-    <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"tmp6" </font></b>(id: <b><font color=#d670d6>13</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5990</font></b>)
-    <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"returnValueLevel3" </font></b>(id: <b><font color=#d670d6>14</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa58f0</font></b>)
-    <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"returnValueLevel2" </font></b>(id: <b><font color=#d670d6>7</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa5850</font></b>)
-    <b><font color=#3b8eea>DTR </font></b><b><font color=#f5f543>"returnValueLevel1" </font></b>(id: <b><font color=#d670d6>2</font></b>, val: <b><font color=#d670d6>0</font></b>, addr: <b><font color=#d670d6>eeaa57b0</font></b>)
 }
 
 
-15 objects created, 0 copied, 12 moved
+3 objects created, 2 copied, 0 moved
 </span></pre>

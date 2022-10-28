@@ -39,10 +39,10 @@ namespace Tracker
 {
     enum class ModificationType
     {
-        Dtr,
-        Ctr,
-        CtrCopy,
-        CtrMove,
+        DTOR,
+        CTOR,
+        CTORCopy,
+        CTORMove,
         Asg,
         AsgCopy,
         AsgMove,
@@ -64,10 +64,10 @@ namespace Tracker
     {
         virtual void enterFunction(std::string name) = 0;
         virtual void exitFunction();
-        virtual void enterDtr(TrackedInfo const& info) = 0;
-        virtual void enterCtr(TrackedInfo const& info) = 0;
-        virtual void enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom) = 0;
-        virtual void enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom) = 0;
+        virtual void enterDTOR(TrackedInfo const& info) = 0;
+        virtual void enterCTOR(TrackedInfo const& info) = 0;
+        virtual void enterCTORCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom) = 0;
+        virtual void enterCTORMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom) = 0;
         virtual void enterAsg(TrackedInfo const& info) = 0;
         virtual void enterAsgCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom) = 0;
         virtual void enterAsgMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom) = 0;
@@ -85,13 +85,15 @@ namespace Tracker
         void addNewLogger(Logger* logger);
         void setHistory(ModificationType type, TrackedInfo& info, TrackedInfo const* other = nullptr, std::string const& oper = "");
         void setName(TrackedInfo& info, std::string const& name);
+        void on();
+        void off();
 
         virtual void enterFunction(std::string name);
         virtual void exitFunction() override;
-        virtual void enterDtr(TrackedInfo const& info);
-        virtual void enterCtr(TrackedInfo const& info);
-        virtual void enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
-        virtual void enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
+        virtual void enterDTOR(TrackedInfo const& info);
+        virtual void enterCTOR(TrackedInfo const& info);
+        virtual void enterCTORCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
+        virtual void enterCTORMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
         virtual void enterAsg(TrackedInfo const& info);
         virtual void enterAsgCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
         virtual void enterAsgMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
@@ -101,13 +103,14 @@ namespace Tracker
     protected:
         int currentId = 0;
         int tmpCounter = 0;
+        bool isOn = true;
+
         struct
         {
             int obj = 0;
             int copy = 0;
             int move = 0;
         } total;
-        
 
         std::vector<Logger*> loggers;
         int getId();
@@ -133,10 +136,10 @@ namespace Tracker
 
         virtual void enterFunction(std::string name);
         virtual void exitFunction() override;
-        virtual void enterDtr(TrackedInfo const& info);
-        virtual void enterCtr(TrackedInfo const& info);
-        virtual void enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
-        virtual void enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
+        virtual void enterDTOR(TrackedInfo const& info);
+        virtual void enterCTOR(TrackedInfo const& info);
+        virtual void enterCTORCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
+        virtual void enterCTORMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
         virtual void enterAsg(TrackedInfo const& info);
         virtual void enterAsgCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
         virtual void enterAsgMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
@@ -179,10 +182,10 @@ namespace Tracker
 
         virtual void enterFunction(std::string name);
         virtual void exitFunction() override;
-        virtual void enterDtr(TrackedInfo const& info);
-        virtual void enterCtr(TrackedInfo const& info);
-        virtual void enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
-        virtual void enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
+        virtual void enterDTOR(TrackedInfo const& info);
+        virtual void enterCTOR(TrackedInfo const& info);
+        virtual void enterCTORCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
+        virtual void enterCTORMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
         virtual void enterAsg(TrackedInfo const& info);
         virtual void enterAsgCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
         virtual void enterAsgMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom);
@@ -201,7 +204,7 @@ namespace Tracker
         enum class LinkType
         {
             Exec,
-            Dtr,
+            DTOR,
             Copy,
             Move,
             Asg,
@@ -229,7 +232,6 @@ namespace Tracker
         Node last = { -1, -1 };
 
         Node allocNode(int id);
-        Node getAsgNode(int id, std::string const& oper);
         Node currentNode(int id);
         void logInfo(TrackedInfo const& info, Node node, std::string const& reason, char const* color = "000000");
         void link(Node from, Node to, LinkType type);
@@ -265,5 +267,6 @@ namespace Tracker
                                         Tracker::mainLogger.addNewLogger(new Tracker::DotLogger)
 #define TRACKER_ENTER Tracker::FncEnvoy __envoy(__PRETTY_FUNCTION__)
 #define TRACKER_CREATE(type, name, init) type name(init, #name)
-
+#define TRACKER_ON Tracker::mainLogger.on()
+#define TRACKER_OFF Tracker::mainLogger.off()
 #endif

@@ -34,8 +34,9 @@ namespace Tracker
 {
     void ConsoleLogger::printAllign()
     {
+        static int n = 0;
         static int const tabsize = 4;
-        printf("%*s", depth() * tabsize, "");
+        printf("%d %*s", ++n, depth() * tabsize, "");
     }
 
     void ConsoleLogger::printColor(TextLogger::Color color, std::string const& str)

@@ -6,24 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Console.cpp
-Colors.h
--
-Tracker.h
--
-
-/home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Dot.cpp
-Tracker.h
--
-cassert
--
-cstdarg
--
-stdexcept
--
-Colors.h
--
-
 /home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Html.cpp
 Colors.h
 -
@@ -34,14 +16,6 @@ stdexcept
 chrono
 -
 ctime
--
-
-/home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Text.cpp
-Tracker.h
--
-
-/home/julesimf/source/MIPT/Ded4/tracking/Tracker/core/Tracker.cpp
-Tracker.h
 -
 
 Tracker/includes/Tracker.h

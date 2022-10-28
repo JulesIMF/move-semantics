@@ -62,15 +62,15 @@ namespace Tracker
         printColor(Color::Default, ")");
     }
 
-    void TextLogger::enterCtr(TrackedInfo const& info)
+    void TextLogger::enterCTOR(TrackedInfo const& info)
     {
         printAllign();
-        printColor(Color::WhiteB, "CTR ");
+        printColor(Color::WhiteB, "CTOR ");
         printInfo(info);
         printColor(Color::Default, "\n");
     }
 
-    void TextLogger::enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
+    void TextLogger::enterCTORCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
         printAllign();
         printColor(Color::RedB, "COPY ");
@@ -80,7 +80,7 @@ namespace Tracker
         printColor(Color::Default, "\n");
     }
 
-    void TextLogger::enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
+    void TextLogger::enterCTORMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
         printAllign();
         printColor(Color::GreenB, "MOVE ");
@@ -128,10 +128,10 @@ namespace Tracker
         printColor(Color::Default, "\n");
     }
 
-    void TextLogger::enterDtr(TrackedInfo const& info)
+    void TextLogger::enterDTOR(TrackedInfo const& info)
     {
         printAllign();
-        printColor(Color::BlueB, "DTR ");
+        printColor(Color::BlueB, "DTOR ");
         printInfo(info);
         printColor(Color::Default, "\n");
     }

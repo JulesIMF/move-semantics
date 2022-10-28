@@ -38,7 +38,7 @@ public:
         return value;
     }
 
-    #define ENTER_CTR(type, other) \
+    #define ENTER_CTOR(type, other) \
     Tracker::mainLogger.setName(info, name); \
     info.value = std::to_string(value); \
     info.address = this; \
@@ -52,22 +52,22 @@ public:
     Int(int value = 0, std::string name = "") : 
         value(value)
     {
-        ENTER_CTR(Ctr, nullptr)
-        Tracker::mainLogger.enterCtr(info);
+        ENTER_CTOR(CTOR, nullptr)
+        Tracker::mainLogger.enterCTOR(info);
     }
 
     Int(Int const& a, std::string name = "") : 
         value(a.value)
     {
-        ENTER_CTR(CtrCopy, &a.info)
-        Tracker::mainLogger.enterCtrCopy(info, a.info);
+        ENTER_CTOR(CTORCopy, &a.info)
+        Tracker::mainLogger.enterCTORCopy(info, a.info);
     }
 #ifndef INT_NO_MOVE
     Int(Int&& a, std::string name = "") :
         value(a.value)
     {
-        ENTER_CTR(CtrMove, &a.info)
-        Tracker::mainLogger.enterCtrMove(info, a.info);
+        ENTER_CTOR(CTORMove, &a.info)
+        Tracker::mainLogger.enterCTORMove(info, a.info);
     }
 #endif
 
@@ -98,7 +98,7 @@ public:
 
     ~Int()
     {
-        Tracker::mainLogger.enterDtr(info);
+        Tracker::mainLogger.enterDTOR(info);
     }
 
     // Arithmetics

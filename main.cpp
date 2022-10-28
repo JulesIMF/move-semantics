@@ -23,39 +23,32 @@ Revision History:
 // Includes / usings
 //
 // #define INT_NO_MOVE
+#include <numeric>
 #include <Tracker.h>
 #include "Int.h"
 
 //
 // Defines
 //
-
-Int level1()
+template <typename T>
+T&& forward(T& arg)
 {
-    TRACKER_ENTER;
-    TRACKER_CREATE(Int, valueInLevel1, 0);
-    return valueInLevel1;
+    return static_cast<T&&>(arg);
 }
 
-Int level2()
+template<typename T>
+T construct_from(T&& origin)
 {
     TRACKER_ENTER;
-    TRACKER_CREATE(Int, valueInLevel2, level1());
-    return valueInLevel2;
-}
-
-Int level3()
-{
-    TRACKER_ENTER;
-    TRACKER_CREATE(Int, valueInLevel3, level2());
-    return valueInLevel3;
+    return T(origin);
 }
 
 int main()
 {
     TRACKER_DEFAULT_INITIALIZATION;
     TRACKER_ENTER;
-    TRACKER_CREATE(Int, returnValueLevel1, level1());
-    TRACKER_CREATE(Int, returnValueLevel2, level2());
-    TRACKER_CREATE(Int, returnValueLevel3, level3());
+    TRACKER_CREATE(Int, origin, 0);
+    auto copy = construct_from(origin);
+    auto move = construct_from(std::move(origin));
+    TRACKER_OFF;
 }

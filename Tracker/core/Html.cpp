@@ -57,6 +57,8 @@ namespace Tracker
 
     void HtmlLogger::printAllign()
     {
+        // static int n = 0;
+        // fprintf(file, "%d ", ++n);
         static int const tabsize = 4;
         fprintf(file, "%*s", depth() * tabsize, "");
     }

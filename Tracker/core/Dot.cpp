@@ -53,13 +53,13 @@ namespace Tracker
         Logger::exitFunction();
     }
 
-    void DotLogger::enterDtr(TrackedInfo const& info)
+    void DotLogger::enterDTOR(TrackedInfo const& info)
     {
         auto node = allocNode(info.id);
         linkExec(node);
         assert(node.index);
         printNodeName(nodes, node);
-        write(nodes, "[label = \"DTR \\\"%s\\\"\", "
+        write(nodes, "[label = \"DTOR \\\"%s\\\"\", "
                        "shape = \"diamond\", "
                        "style = \"filled, bold\", "
                        "fillcolor = \"#3b8eea\", "
@@ -67,18 +67,18 @@ namespace Tracker
                        info.name.c_str());
         endPrintNode();
 
-        link({ info.id, 0 }, node, LinkType::Dtr);
+        link({ info.id, 0 }, node, LinkType::DTOR);
     }
 
-    void DotLogger::enterCtr(TrackedInfo const& info)
+    void DotLogger::enterCTOR(TrackedInfo const& info)
     {
         auto node = allocNode(info.id);
-        logInfo(info, currentNode(info.id), "CTR");
+        logInfo(info, currentNode(info.id), "CTOR");
         linkExec(node);
         assert(!node.index);
     }
 
-    void DotLogger::enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
+    void DotLogger::enterCTORCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
         auto node = allocNode(infoTo.id);
         logInfo(infoTo, currentNode(infoTo.id), "COPY", "f14c4c");
@@ -87,7 +87,7 @@ namespace Tracker
         link(currentNode(infoFrom.id), node, LinkType::Copy);
     }
 
-    void DotLogger::enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
+    void DotLogger::enterCTORMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
         auto node = allocNode(infoTo.id);
         logInfo(infoTo, currentNode(infoTo.id), "MOVE", "23d18b");
@@ -135,16 +135,16 @@ namespace Tracker
         return { id, nodeById[id]++ };
     }
 
-    DotLogger::Node DotLogger::getAsgNode(int id, std::string const& oper)
-    {
-        int index = ++nOpers;
-        printNodeName(nodes, { id, -index });
+    // DotLogger::Node DotLogger::getAsgNode(int id, std::string const& oper)
+    // {
+    //     int index = ++nOpers;
+    //     printNodeName(nodes, { id, -index });
 
-        write(nodes, "[shape=rectangle, style=filled, label=\"%s=\", fillcolor=\"mediumspringgreen\"]\n", oper.c_str());
-        endPrintNode();
+    //     write(nodes, "[shape=rectangle, style=filled, label=\"%s=\", fillcolor=\"mediumspringgreen\"]\n", oper.c_str());
+    //     endPrintNode();
 
-        return { id, -index };
-    }
+    //     return { id, -index };
+    // }
 
     DotLogger::Node DotLogger::currentNode(int id)
     {
@@ -204,7 +204,7 @@ namespace Tracker
             write(links, "[weight=100, style=dashed, color=\"#d670d6\"]");
             break;
         
-        case LinkType::Dtr:
+        case LinkType::DTOR:
             write(links, "[style=dashed, color=\"#3b8eea\"]");
             break;
         
@@ -231,19 +231,10 @@ namespace Tracker
 
     void DotLogger::printNodeName(FILE* file, Node node)
     {
-        if (node.id < 0)
-            return;
+        assert(node.index >= 0);
         
-        if (node.index < 0)
-        {
-            node.index *= -1;
-            write(file, "asg_id_%d_operindex_%d", node.id, node.index);
-        }
-
-        else
-        {
-            write(file, "node_id_%d_index_%d", node.id, node.index);
-        }
+        write(file, "node_id_%d_index_%d", node.id, node.index);
+        
     }
 
     DotLogger::DotLogger()

@@ -75,15 +75,15 @@ namespace Tracker
     {
         switch (type)
         {
-        case ModificationType::Ctr:
+        case ModificationType::CTOR:
             info.history = "<id" + std::to_string(info.id) + "|" + info.value + ">";
             break;
         
-        case ModificationType::CtrCopy:
+        case ModificationType::CTORCopy:
             info.history = "COPY(" + other->name + ", " + other->history + ")";
             break;
         
-        case ModificationType::CtrMove:
+        case ModificationType::CTORMove:
             info.history = "MOVE(" + other->name + ", " + other->history + ")";
             break;
         
@@ -113,6 +113,16 @@ namespace Tracker
         return currentId++;
     }
 
+    void MainLogger::on()
+    {
+        isOn = true;
+    }
+
+    void MainLogger::off()
+    {
+        isOn = false;
+    }
+
     void MainLogger::enterFunction(std::string name)
     {
         Logger::pushFunction(name);
@@ -129,43 +139,50 @@ namespace Tracker
             logger->exitFunction();
     }
 
-    void MainLogger::enterDtr(TrackedInfo const& info)
+    void MainLogger::enterDTOR(TrackedInfo const& info)
     {
+        if (!isOn) return;
+        if (!isOn) return;
         for (auto logger : loggers)
-            logger->enterDtr(info);
+            logger->enterDTOR(info);
     }
 
-    void MainLogger::enterCtr(TrackedInfo const& info)
+    void MainLogger::enterCTOR(TrackedInfo const& info)
     {
+        if (!isOn) return;
         total.obj++;
         for (auto logger : loggers)
-            logger->enterCtr(info);
+            logger->enterCTOR(info);
     }
 
-    void MainLogger::enterCtrCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
+    void MainLogger::enterCTORCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
+        if (!isOn) return;
         total.obj++;
         total.copy++;
         for (auto logger : loggers)
-            logger->enterCtrCopy(infoTo, infoFrom);
+            logger->enterCTORCopy(infoTo, infoFrom);
     }
 
-    void MainLogger::enterCtrMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
+    void MainLogger::enterCTORMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
+        if (!isOn) return;
         total.obj++;
         total.move++;
         for (auto logger : loggers)
-            logger->enterCtrMove(infoTo, infoFrom);
+            logger->enterCTORMove(infoTo, infoFrom);
     }
 
     void MainLogger::enterAsg(TrackedInfo const& info)
     {
+        if (!isOn) return;
         for (auto logger : loggers)
             logger->enterAsg(info);
     }
 
     void MainLogger::enterAsgCopy(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
+        if (!isOn) return;
         total.copy++;
         for (auto logger : loggers)
             logger->enterAsgCopy(infoTo, infoFrom);
@@ -173,6 +190,7 @@ namespace Tracker
 
     void MainLogger::enterAsgMove(TrackedInfo const& infoTo, TrackedInfo const& infoFrom)
     {
+        if (!isOn) return;
         total.move++;
         for (auto logger : loggers)
             logger->enterAsgMove(infoTo, infoFrom);
@@ -180,6 +198,7 @@ namespace Tracker
     
     void MainLogger::enterAsgOper(TrackedInfo const& infoTo, TrackedInfo const& infoFrom, std::string const& oper) 
     {
+        if (!isOn) return;
         for (auto logger : loggers) 
             logger->enterAsgOper(infoTo, infoFrom, oper);
     }
